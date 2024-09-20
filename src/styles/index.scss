@@ -1,0 +1,108 @@
+@import "../styles/fonts.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  height: 100%;
+  font-family: "GrtskGiga";
+}
+
+.vertical-text-bt {
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  @apply relative transition-colors duration-300 ease-linear;
+
+  &:hover {
+    @apply text-white;
+  }
+
+  &:hover::before {
+    @apply h-full;
+  }
+
+  &::before {
+    content: "";
+    @apply absolute left-[-3px] top-0 h-0 w-[2px] bg-white transition-all duration-300 ease-linear;
+  }
+}
+
+.link-hover-effect {
+  @apply relative transition-colors duration-300 ease-linear;
+
+  &:hover {
+    @apply text-white;
+  }
+
+  &:hover::after {
+    @apply w-full;
+  }
+
+  &::after {
+    content: "";
+    @apply absolute bottom-[-3px] left-0 h-[2px] w-0 bg-white transition-all duration-300 ease-linear;
+  }
+}
+
+.infinite-text {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+}
